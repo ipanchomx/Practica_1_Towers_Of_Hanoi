@@ -1,4 +1,4 @@
-#Authors: Andrea Anahi Santana Hern·ndez & Edgar Francisco Medina Rifas
+#Authors: Andrea Anahi Santana Hern√°ndez & Edgar Francisco Medina Rifas
 #Exps: is715773 & is715468
 #Variables used (in order of use): 
 #$s0 = n disks 			   $s1 = first tower (A)	$s2 = second tower (B)	$t7 = $s0
@@ -66,7 +66,7 @@ else:
 	sw $s0, 0($s3)			#Put disk in third tower
 	sw $zero, 0($s1)		#Put 0 in previous A tower
 	
-	#hanoi (a-1, c, A, B)
+	#hanoi (a-1, C, B, A)
 	add $s3,$s3,$t2			#Next position of previous C tower (third tower)
 	add $s0,$s0,$t1			# a -=1
 	
@@ -74,7 +74,7 @@ else:
 	lw $s1, 8($sp)			#Load address of previous B tower in tower A
 	lw $s2, 4($sp)			#Load address of previous A tower in tower B
 
-	jal hanoi
+	jal hanoi			#hanoi (a-1, C, B, A)
 	
 popStack:
 	#Reload varibles to back to function
